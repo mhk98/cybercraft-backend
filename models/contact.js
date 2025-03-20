@@ -6,7 +6,7 @@ const contactSchema = new mongoose.Schema({
     required: true,
   },
   email: {
-    type: Number,
+    type: String,
     required: true,
   },
   
@@ -17,6 +17,6 @@ const contactSchema = new mongoose.Schema({
 });
 
 // Create the model
-const Room = mongoose.model("Contact", contactSchema);
+const Contact = mongoose.model("Contact", contactSchema);
 
-module.exports = Room;
+module.exports = Contact;

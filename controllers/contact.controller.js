@@ -16,7 +16,7 @@ module.exports.createContact = async (req, res) => {
     res.status(200).send({
       status: 'Success',
       message: 'Successfully inserted contact data',
-      data: room
+      data: contact
     });
   } catch (error) {
     res.status(500).send({
