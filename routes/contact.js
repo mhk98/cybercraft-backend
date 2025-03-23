@@ -3,7 +3,7 @@ const ContactController = require('../controllers/contact.controller');
 const auth = require('../middlewares/auth');
 const router = express.Router();
 
-router.get('/', ContactController.getAllContact);
+router.get('/', auth('admin'), ContactController.getAllContact);
 router.post('/create', ContactController.createContact);
 
 
