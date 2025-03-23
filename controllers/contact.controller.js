@@ -4,108 +4,6 @@ const PDFDocument = require("pdfkit");
 const fs = require("fs");
 const path = require("path");
 
-// module.exports.createContact = async (req, res) => {
-//   try {
-
-//     const { fullName, email, message } = req.body;
-
-
-
-//     const data = { fullName, email, message  }; 
-//     const contact = new Contact(data);
-//     await contact.save();
-
-//     console.log('contact', contact);
-//     res.status(200).send({
-//       status: 'Success',
-//       message: 'Successfully inserted contact data',
-//       data: contact
-//     });
-//   } catch (error) {
-//     res.status(500).send({
-//       status: "failed",
-//       message: "Something went wrong",
-//       error: error.message,
-//     });
-//   }
-// };
-
-
-// module.exports.createContact = async (req, res) => {
-  
-//   try {
-//     const { fullName, email, message } = req.body;
-
-//       const contact = new Contact(req.body);
-//       await contact.save();
-
-//     // Set the PDF file path
-//     const pdfPath = path.join(__dirname, "contact.pdf");
-//     const doc = new PDFDocument();
-//     const writeStream = fs.createWriteStream(pdfPath);
-
-//     doc.pipe(writeStream);
-
-//     // PDF Header
-//     doc.fontSize(18).text("Contact Information", { align: "center" }).moveDown(2);
-
-//     // PDF Content (Table-like format)
-//     doc.fontSize(12);
-//     doc.text(`Full Name: ${fullName}`);
-//     doc.text(`Email: ${email}`);
-//     doc.text(`Message: ${message}`);
-//     doc.end();
-
-//     // Once the PDF is created, send an email
-//     writeStream.on("finish", async () => {
-//         // Nodemailer setup
-//        const transporter = nodemailer.createTransport({
-//            host: "nicedashboard.info",
-//            port: 465, // SSL Port
-//            secure: true,
-//            auth: {
-//              user: "empyrean@nicedashboard.info",
-//              pass: "54J@Yf&nN",
-//            },
-//          });
-
-//         const mailOptions = {
-//             from: "empyrean@nicedashboard.info",
-//             // to: "md@nusaiba.com.bd", // Receiver's email
-//             to: "mohsinkabirseo@gmail.com", // Receiver's email
-//             subject: "New Contact Form Submission",
-//             text: `A new contact form submission:\n\nFull Name: ${fullName}\nEmail: ${email}\nMessage: ${message}`,
-//             attachments: [
-//                 {
-//                     filename: "contact.pdf",
-//                     path: pdfPath,
-//                 },
-//             ],
-//         };
-
-//         // Send email
-//         await transporter.sendMail(mailOptions);
-
-//         // Delete the PDF file after sending
-//         fs.unlinkSync(pdfPath);
-
-//       res.status(200).send({
-//       status: 'Success',
-//       message: 'Successfully inserted contact data',
-//       data: contact
-//     });
-//     });
-
-// } catch (error) {
-//   res.status(500).send({
-//           status: "failed",
-//           message: "Something went wrong",
-//           error: error.message,
-//         });
-// }
-
-// };
-
 
 module.exports.createContact = async (req, res) => {
   try {
@@ -196,7 +94,7 @@ module.exports.createContact = async (req, res) => {
 
       const mailOptions = {
         from: "empyrean@nicedashboard.info",
-        to: "mohsinkabirseo@gmail.com",
+        to: "md@nusaiba.com.bd",
         subject: "New Contact Form Submission",
         text: `A new contact form submission:\n\nFull Name: ${fullName}\nEmail: ${email}\nMessage: ${message}`,
         attachments: [
