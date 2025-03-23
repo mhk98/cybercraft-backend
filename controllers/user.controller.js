@@ -6,9 +6,9 @@ const { generateToken } = require("../helpers/jwtHelpers");
 
 exports.signup = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { fullName, email, password } = req.body;
     const data = {
-        name,
+      fullName,
         email,
         password,
     };
