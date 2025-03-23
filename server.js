@@ -18,11 +18,6 @@ dbConnect()
 app.use('/api/v1/user',UserRoute)
 app.use('/api/v1/contact',ContactRoute)
 
-
-
-// Static image folder
-app.use("/images", express.static("images"));
-
 app.get('/', (req, res) => {
     res.json({"message": "Hello server is running"});
 });
