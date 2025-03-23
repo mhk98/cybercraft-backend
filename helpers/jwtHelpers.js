@@ -6,6 +6,7 @@ exports.generateToken = (userInfo) => {
     const payload = {
       email: userInfo.email,
       role: userInfo.role,
+      fullName:userInfo.fullName
     };
 
     // Token generation
